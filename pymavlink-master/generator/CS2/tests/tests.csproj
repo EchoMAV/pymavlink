@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="test_packets_v1.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test_packets_v2.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\lib\MavlinkCRC.cs">
+      <Link>MavlinkCRC.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\MavnetMessage.cs">
+      <Link>MavnetMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\MavnetMessageConverter.cs">
+      <Link>MavnetMessageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\lib\MavnetParser.cs">
+      <Link>MavnetParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\build\csharp\mavlink.cs">
+      <Link>mavlink.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
